@@ -10,10 +10,31 @@ buttons.forEach((btnEl) => {
 })
 
 //Event 2 - keydown
+const body = document.querySelector('body');
+function bgColorChange(event){
+    if (event.key === 'k'){
+        event.target.style.backgroundColor = 'azure';
+    } else if (event.key === 'j'){
+        event.target.style.backgroundColor = 'thistle';
+    } else {
+        event.target.style.backgroundColor = 'white';
+    }
+}
+body.addEventListener('keydown', bgColorChange);
 
-//Event 3 - mousemove
+//Event 3 - mouseenter
+const mainNav = document.querySelector('.main-navigation');
+function makePurple(event){
+    event.target.style.backgroundColor = 'orchid';
+}
+mainNav.addEventListener('mouseenter', makePurple)
 
-//Event 4 - scroll
+//Event 4 - mouseleave
+function makeWhite(event){
+    event.target.style.backgroundColor = 'white';
+}
+mainNav.addEventListener('mouseleave', makeWhite)
+
 
 //Event 5 - dblclick
 function spin(event){
