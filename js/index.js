@@ -1,6 +1,13 @@
 // Your code goes here
 
 //Event 1 - click
+const buttons = document.querySelectorAll('.btn');
+function paraColorChange(event){
+    event.target.parentElement.style.color = '#17A2B8'
+}
+buttons.forEach((btnEl) => {
+    btnEl.addEventListener('click', paraColorChange)
+})
 
 //Event 2 - keydown
 
@@ -9,11 +16,17 @@
 //Event 4 - scroll
 
 //Event 5 - dblclick
+function spin(event){
+    event.target.parentElement.style.transform = 'rotate(360deg)';
+    event.target.parentElement.style.transition = 'transform 1s';
+}
+buttons.forEach((btnEl) => {
+    btnEl.addEventListener('dblclick', spin)
+})
 
 //Event 6 - resize
 
 //Event 7 - mouseover
-const buttons = document.querySelectorAll('.btn');
 function enlarge(event){
     event.target.style.transform = 'scale(1.1)';
     event.target.style.transition = 'transform 1s';
